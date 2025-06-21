@@ -1,103 +1,212 @@
-import Image from "next/image";
+"use client";
+
+import Head from "next/head";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	return (
+		<>
+			<Head>
+				<title>
+					Dirgantara Restaurant - Fine Dining dengan Sentuhan
+					Nusantara
+				</title>
+				<meta
+					name="description"
+					content="Restaurant elegan dengan menu modern berbahan dasar tradisional Indonesia"
+				/>
+			</Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+			{/* Hero Section */}
+			<section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+				<div className="absolute inset-0 bg-black opacity-50"></div>
+				<div className="relative z-10 text-center px-4">
+					<h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+						<span className="text-yellow-400">
+							Dirgantara
+						</span>{" "}
+						Restaurant
+					</h1>
+					<p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
+						Pengalaman kuliner tinggi dengan cita rasa
+						Nusantara yang autentik
+					</p>
+					<div className="flex gap-4 justify-center">
+						<button
+							onClick={() =>
+								(window.location.href = "/login")
+							}
+							className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+						>
+							Login
+						</button>
+						<button
+							onClick={() =>
+								(window.location.href = "/register")
+							}
+							className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-6 rounded-full transition-all duration-300"
+						>
+							Register
+						</button>
+					</div>
+				</div>
+
+				<div className="absolute bottom-10 left-0 right-0 flex justify-center">
+					<svg
+						className="animate-bounce w-8 h-8 text-white"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth="2"
+							d="M19 14l-7 7m0 0l-7-7m7 7V3"
+						></path>
+					</svg>
+				</div>
+			</section>
+
+			{/* Keunggulan Restaurant */}
+			<section className="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
+				<div className="container mx-auto px-4">
+					<h2 className="text-4xl font-bold text-center mb-16">
+						Mengapa Memilih{" "}
+						<span className="text-yellow-400">
+							Dirgantara
+						</span>
+						?
+					</h2>
+
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+						<div className="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+							<div className="text-yellow-400 text-5xl mb-4">
+								✈️
+							</div>
+							<h3 className="text-2xl font-bold mb-3">
+								Konsep Unik
+							</h3>
+							<p className="text-gray-300">
+								Interior bertema penerbangan dengan
+								sentuhan modern dan elemen tradisional
+								Indonesia.
+							</p>
+						</div>
+
+						<div className="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+							<div className="text-yellow-400 text-5xl mb-4">
+								👨‍🍳
+							</div>
+							<h3 className="text-2xl font-bold mb-3">
+								Chef Berpengalaman
+							</h3>
+							<p className="text-gray-300">
+								Dibimbing oleh chef dengan pengalaman
+								15+ tahun di restoran bintang Michelin.
+							</p>
+						</div>
+
+						<div className="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+							<div className="text-yellow-400 text-5xl mb-4">
+								🌿
+							</div>
+							<h3 className="text-2xl font-bold mb-3">
+								Bahan Premium
+							</h3>
+							<p className="text-gray-300">
+								Bahan-bahan pilihan langsung dari petani
+								dan produsen lokal terbaik.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Testimonial */}
+			<section className="py-20 bg-gradient-to-r from-gray-900 to-black">
+				<div className="container mx-auto px-4">
+					<h2 className="text-4xl font-bold text-center mb-16 text-white">
+						Kata{" "}
+						<span className="text-yellow-400">Mereka</span>{" "}
+						Tentang Kami
+					</h2>
+
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div className="bg-gray-800 p-8 rounded-xl">
+							<div className="flex items-center mb-4">
+								<div className="text-yellow-400 text-2xl mr-2">
+									★★★★★
+								</div>
+							</div>
+							<p className="text-gray-300 italic mb-6">
+								"Pengalaman makan terbaik yang pernah
+								saya rasakan! Nuansa restoran yang unik
+								dipadukan dengan rasa makanan yang luar
+								biasa. Beef Rendang-nya benar-benar
+								spesial."
+							</p>
+							<div className="flex items-center">
+								<div className="w-12 h-12 rounded-full bg-gray-700 mr-4"></div>
+								<div>
+									<h4 className="font-bold text-white">
+										Andi Wijaya
+									</h4>
+									<p className="text-gray-400">
+										Food Blogger
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div className="bg-gray-800 p-8 rounded-xl">
+							<div className="flex items-center mb-4">
+								<div className="text-yellow-400 text-2xl mr-2">
+									★★★★☆
+								</div>
+							</div>
+							<p className="text-gray-300 italic mb-6">
+								"Konsepnya sangat kreatif dan
+								eksekusinya sempurna. Dessert
+								Skyline-nya tidak hanya indah dipandang
+								tapi juga lezat. Pelayannya sangat
+								profesional dan ramah."
+							</p>
+							<div className="flex items-center">
+								<div className="w-12 h-12 rounded-full bg-gray-700 mr-4"></div>
+								<div>
+									<h4 className="font-bold text-white">
+										Sarah Dewi
+									</h4>
+									<p className="text-gray-400">
+										Travel Influencer
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* CTA Section */}
+			<section className="py-16 bg-yellow-500 text-black">
+				<div className="container mx-auto px-4 text-center">
+					<h2 className="text-3xl md:text-4xl font-bold mb-6">
+						Siap untuk Pengalaman Kuliner yang Tak Terlupakan?
+					</h2>
+					<p className="text-xl mb-8 max-w-2xl mx-auto">
+						Reservasi sekarang dan dapatkan pengalaman makan
+						terbaik dengan sentuhan kelas dunia
+					</p>
+					<button
+						onClick={() =>
+							(window.location.href = "/product")
+						}
+						className="bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300"
+					>
+						Lihat Menu
+					</button>
+				</div>
+			</section>
+		</>
+	);
 }
